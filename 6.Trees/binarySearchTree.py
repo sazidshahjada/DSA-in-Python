@@ -57,9 +57,20 @@ class BinarySearchTree:
             if current.right:
                 queue.append(current.right)
 
+    def find_key(self, current, key):
+        if not current:
+            print("Key Not Found")
+            return
 
-    def delete(self, data):
-        pass
+        if current.value == key:
+            print(f"{key} Found")
+            return
+
+        if key < current.value:
+            self.find_key(current.left, key)
+        else:
+            self.find_key(current.right, key)
+
 
 if __name__ == '__main__':
     bst = BinarySearchTree()
@@ -80,3 +91,7 @@ if __name__ == '__main__':
 
     bst.level_travarse(bst.root)
     print()
+
+    bst.find_key(bst.root, 5)
+
+    bst.find_key(bst.root, 100)
