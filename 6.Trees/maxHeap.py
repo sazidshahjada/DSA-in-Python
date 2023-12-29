@@ -9,7 +9,7 @@ class PriorityQueue:
             if self.heap_array[index] > self.heap_array[parent_index]:
                 self.heap_array[index], self.heap_array[parent_index] = (
                     self.heap_array[parent_index],
-                    self.heap_array[index],
+                    self.heap_array[index]
                 )
                 index = parent_index
             else:
